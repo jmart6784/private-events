@@ -9,5 +9,6 @@ class User < ApplicationRecord
   # has_many :invitations, foreign_key: :creator_id
   # has_many :attended_events, through: :invitations, source: :attended_event
 
-  validates :email, :password, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 end

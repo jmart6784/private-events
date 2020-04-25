@@ -1,6 +1,8 @@
 <p>
-  <strong>Edate:</strong>
-  <%= @event.edate %>
+  <h1>Event:</h1>
+  <p><strong>Host:</strong> <%= @user.email %></p><br>
+  <p><strong>Date:</strong> <%= @event.edate %></p><br>
+  <p><strong>Description:</strong> <%= @event.description %></p>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

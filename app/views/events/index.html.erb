@@ -3,7 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Edate</th>
+      <th>Event date</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +13,12 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.edate %></td>
+        <td><%= event.description %></td>
         <td><%= link_to 'Show', event %></td>
+        <% if current_user == event.user %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +27,5 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %><br>
-<%= render "acclinks" %>
+<%= link_to 'Users', user_index_url %><br>
+<%= render 'acclinks' %>
