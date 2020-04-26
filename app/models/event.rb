@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
-  belongs_to :user
-  # belongs_to :creator, class_name: :user
-  # has_many :attendees, through: :invitations, source: :attendee
-  # has_many :attendees, through: :invitations, sourec: :attendee
+  # belongs_to :user
+  belongs_to :creator, class_name: :User
+  has_many :invitations, foreign_key: :attended_event_id
+  has_many :attendees, through: :invitations, source: :attendee
 
-  validates :edate, presence: true
+  validates :edate, :description, presence: true
 end

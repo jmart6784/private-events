@@ -1,5 +1,5 @@
-<h1>Show users</h1>
-<h3>User's Event: <%= @user.email %></h3>
+<h1>User's Events</h1>
+<h3>Host: <%= @user.email %></h3>
 <h4><% @user.event.each do |e| %></h4>
   <h4>Date: <%= e.edate %></h4>
   <h4>Description: <%= e.description %></h4>
