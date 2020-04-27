@@ -5,4 +5,16 @@
   <h4>Description: <%= e.description %></h4>
 <% end %>
 
+<h1>Upcoming:</h1>
+
+<h4>Upcoming Events : <%= @upcoming_events.each do |e| %></h4>
+<h4> Description: <%= e.description %> </h4>
+<h4> Date: <%= e.edate %> </h4>
+<% end %>
+
+<h1>Events Attended : <%= @prev_events.each do |e| %></h1>
+<h4> Description: <%= e.description %> </h4>
+<h4> Date: <%= e.edate %> </h4>
+<% end %>
+<br>
 <%= link_to  'Back', user_index_url %>

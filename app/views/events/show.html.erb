@@ -1,8 +1,13 @@
 <p>
   <h1>Event:</h1>
   <p><strong>Host:</strong> <%= @user.email %></p><br>
-  <p><strong>Date:</strong> <%= @event.edate %></p><br>
-  <p><strong>Description:</strong> <%= @event.description %></p>
+  <p><strong>Date:</strong> <%= @events.edate %></p><br>
+  <p><strong>Description:</strong> <%= @events.description %></p>
+  <% if @events.attendee_ids == [] %>
+    <p><strong>No attendees yet</strong></p>
+  <% else %>
+    <p><strong>Event Attendees:</strong> <%= @events.attendee_ids %></p><br>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
